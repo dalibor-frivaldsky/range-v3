@@ -376,7 +376,7 @@ namespace ranges
         public:
             composed() = default;
             composed(Second second, First first)
-              : composed::compressed_pair{std::move(first), std::move(second)}
+              : compressed_pair<First, Second>(std::move(first), std::move(second))
             {}
             template<typename...Ts,
                 typename FirstResultT = result_of_t<First&(Ts &&...)>>
